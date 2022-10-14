@@ -133,6 +133,39 @@ public class CardGame {
             }
 
 
+            //figure out if there's four of a kind in the hand
+            //check the ranks of each card
+            //loop through each card in the hand
+            //inner loop to compare all the other cards to the
+            // current card to look for the same rank
+            //use a counter to see how many cards of the same rank are in the hand
+
+
+            for(int i = 0; i < hand.length; i++) {
+
+                //get the rank of the i card and the j card
+                int iValue = hand[i];
+                int iRank = iValue % 13;
+
+                int sameRank = 0;
+
+                //check all the cards after the current one against the  i card
+                for (int j = i; j < hand.length; j++) {
+                    int jValue = hand[j];
+                    int jRank = jValue % 13;
+
+                    //check if the ranks are the same
+                    if(iRank == jRank) {
+                        sameRank++;
+                    }
+
+                }
+
+                if(sameRank == 4)
+                    fourOfKind = true;
+
+            }
+
 
         }
 
